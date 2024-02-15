@@ -1,4 +1,10 @@
-export default function Login(){
+import { Link } from "react-router-dom"
+
+// TODO: preciso fazer um get para ver se o usuario e a senha existem no bd para aprovar o login
+// TODO: ao clicar em esqueceu senha deve direcionar para uma rota onde preenche so o email e recebe um email com a senha
+// TODO: adicionar funcionalidade ao botao mantenha-me conectado
+
+export default function Login(){ 
   return (
     <main className="h-screen flex flex-1 justify-center items-center">
 
@@ -13,7 +19,7 @@ export default function Login(){
             <div className="flex flex-col">
                 <div className="flex flex-col gap-2">
                   <label className="text-sm font-medium">E-mail</label>
-                  <input className="bg-slate-600 border border-slate-500 p-2.5 rounded-lg text-sm outline-none focus:border-emerald-400" type="text" name="email" id="email" placeholder="nome@dominio.com.br" />
+                  <input className="bg-slate-600 border border-slate-500 p-2.5 rounded-lg text-sm outline-none focus:border-emerald-400" type="email" name="email" id="email" placeholder="nome@dominio.com.br" />
                 </div>
                 <div className="flex flex-col my-4 gap-2">
                   <label className="text-sm font-medium">Senha</label>
@@ -27,7 +33,7 @@ export default function Login(){
                 <label htmlFor="remember_login">Mantenha-me conectado</label>
               </div>
 
-              <a className="text-emerald-400 hover:underline *: focus:outline-emerald-400" href="#">Esqueceu sua senha?</a>
+              <a className="text-emerald-400 hover:underline focus:outline-emerald-400" href="#">Esqueceu sua senha?</a>
             </div>
 
             <div className="flex justify-center items-center my-4">
@@ -35,7 +41,7 @@ export default function Login(){
             </div>
 
             <div className="font-medium text-sm text-slate-200">
-              <p>Não registrado? <a className="text-emerald-400 hover:underline focus:outline-emerald-400" href="#">Criar uma conta</a></p>
+              <span>Não registrado? <Link className="text-emerald-400 hover:underline focus:outline-emerald-400" to="/sign-up">Criar uma conta</Link></span>
             </div>
 
           </form>
